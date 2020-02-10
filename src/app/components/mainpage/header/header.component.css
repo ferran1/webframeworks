@@ -1,0 +1,33 @@
+.headerpage {
+background-color: wheat;
+}
+
+.title  {
+color: #000a85;
+text-align: center;
+/*font-size: -webkit-xxx-large;*/
+}
+
+.subtitle{
+color: #000a85;
+text-align: right;
+}
+
+.fietsbord img {
+float:right;
+}
+p.subtitle {
+    margin-top: 76px;
+    margin-bottom: 0px;
+}
+.Logo_amsterdam {
+    width: 120px;
+    height: 100px;
+}
+
+.Logo_fietsbord {
+    width: 120px;
+    height: 100px;
+}
+
+

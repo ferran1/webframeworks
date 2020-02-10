@@ -1,0 +1,19 @@
+.highlight {
+  background-color: aqua;
+}
+h4 {
+  margin-left: 15px;
+}
+td, th {
+  padding: 10px;
+}
+
+.table-md {
+  margin: 25px 0px 5px 25px;
+}
+
+.row > .col-6 > .btn-primary {
+  margin-left: 100px;
+}
+
+

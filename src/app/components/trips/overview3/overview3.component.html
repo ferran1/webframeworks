@@ -1,0 +1,20 @@
+<div class="row">
+<div class="col-6">
+  <h4>Overview of all trips:</h4>
+  <table class="table-md table-bordered">
+    <tr>
+      <th>Trips start-dates: </th>
+    </tr>
+    <tr *ngFor="let trip of trips; let i = index">
+      <td (click)="onSelected(i)"  [ngClass]="activeIndex == i? 'highlight' : ''"> Trip {{i+1}}: {{ trip.start | date: "dd/MM/yyyy"}} </td>
+    </tr>
+  </table>
+  <button (click)="onAdd()" class="button btn-primary">Add Trip</button>
+</div>
+<div class="col-6">
+  <app-detail3 [(editedTrip)]="selectedTrip" (unsavedChanges)="changesDetected($event)"
+               (saveTrip)="saveRequest($event)" (deleteTrip)="deleteRequest()"
+               [copyTrip]="copyTrip" [changesDetected]="unsavedChanges"
+               (cancelTrip)="cancelRequest()" [activeIndex]="activeIndex"></app-detail3>
+</div>
+</div>

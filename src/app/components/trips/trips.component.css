@@ -1,0 +1,24 @@
+
+.table {
+margin-top: 3px;
+}
+.table tr th {
+background-color: wheat;
+color: #250080;
+}
+
+.sortorder:after {
+  color: #250080;
+  content:'\25b2';
+}
+
+.sortorder.reverse:after {
+  color: #250080;
+  content:'\25bc';
+}
+
+.bg-transparent {
+  color: #250080;
+  font-weight: bold;
+}
+

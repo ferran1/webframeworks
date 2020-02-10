@@ -1,0 +1,70 @@
+.dropdown{
+margin:5px auto 10px;
+}
+
+.no-gutters .btn:focus {
+box-shadow: 0 0 0 0.2rem rgb(0, 123, 255);
+border-radius: 0.25rem !important;
+}
+
+.no-gutters .col-6{
+padding-top: 5px;
+padding-right: 5px;
+
+}
+
+.no-gutters .col-6 button{
+padding: 0px;
+border-radius: 0rem;
+}
+
+.no-gutters .col-6 img{
+display: block;
+margin: 0 auto;
+border-radius: inherit;
+}
+
+/* MEDIA QUERIES DESKTOP SIZE*/
+@media screen and (min-width: 2560px){
+.no-gutters .col-6 img{
+width:100%;
+}
+
+.no-gutters .col-6 btn btn-lg btn-outline-primary{
+width:100%;
+}
+}
+
+@media screen and (min-width: 1440px) and (max-width:2560px){
+
+.no-gutters .col-6 img{
+width:100%;
+}
+
+}
+
+@media screen and (max-width:2560px){
+
+.no-gutters .col-6 img{
+width:100%;
+}
+
+}
+
+/*MOBILE & TABLET MEDIA QUERIES */
+@media screen and (max-width:425px){
+
+.col-3 .list-group li{
+font-size:5px;
+padding-left: 0px;
+}
+
+}
+@media screen and (max-width:991px){
+
+.col-3 .list-group li{
+font-size:12px;
+}
+
+}
+

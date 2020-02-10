@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-lg-5">
+    <table class="table-bordered">
+      <tr>
+        <th>Tag</th>
+        <th (click)="sortStatus()" [ngClass]="sortingToggle ? 'sortorder' : 'sortorder reverse'">Status</th>
+      </tr>
+      <tbody>
+      <tr [ngClass]="activeIndex == index ? 'highlight' : ''" (click)="onSelected(index)" *ngFor="let scooter of this.scooters; let index = index;">
+        <td>{{scooter.tag}}</td>
+        <td> {{scooterStatus[scooter.status]}}</td>
+      </tr>
+      </tbody>
+    </table>
+    <button (click)="onAdd()" type="button" class="btn btn-primary">Add scooter</button>
+  </div>
+  <div class="col-lg-5">
+    <app-scooter-spring-detail (detectedChanges)="onDetectedChanges($event)" [unsavedChanges]="detectedChanges" (cancelSelection)="onCancelRequest()" (deleteScooter)="onDeleteRequest()"
+                             (saveScooter)="onSaveRequest($event)"
+                             [activeIndex]="this.activeIndex"></app-scooter-spring-detail>
+  </div>
+</div>

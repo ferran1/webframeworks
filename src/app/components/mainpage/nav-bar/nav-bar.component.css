@@ -1,0 +1,16 @@
+.navbar {
+margin-top: 3px;
+}
+
+.navbar .btn {
+text-decoration: underline;
+margin: 2px;
+
+}
+
+.navbar .btn.btn-outline-primary.btn-square {
+border-radius: 0;
+border-color: #250080;
+text-decoration-color: #250080;
+color: #250080
+}

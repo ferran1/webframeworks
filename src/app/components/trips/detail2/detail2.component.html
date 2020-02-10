@@ -1,0 +1,41 @@
+<p *ngIf="activeIndex2 == null">Select a trip at the left!</p>
+<div class="table-responsive" *ngIf="activeIndex2 != null">
+<table class="table table-bordered" >
+  <tr>
+  <th colspan="2">Selected trip details:</th>
+  </tr>
+  <tbody>
+  <tr>
+    <th>Start date:</th>
+    <td><input placeholder="Start date" [(ngModel)]="editedTrip.start"></td>
+  </tr>
+  <tr>
+  <th>End date:</th>
+  <td><input placeholder="End date" [(ngModel)]="editedTrip.end"></td>
+  </tr>
+  <tr>
+  <th>Duration:</th>
+  <td><input  placeholder="Duration" [(ngModel)]="editedTrip.duration"></td>
+  </tr>
+  <tr>
+    <th>Start location:</th>
+    <td><input type="text" placeholder="Start location" [(ngModel)]="editedTrip.startLocation"></td>
+  </tr>
+  <tr>
+    <th>End location:</th>
+    <td><input type="text" placeholder="End location" [(ngModel)]="editedTrip.endLocation"></td>
+  </tr>
+  <tr>
+    <th>Mileage</th>
+    <td><input placeholder="Mileage"  [(ngModel)]="editedTrip.mileage"></td>
+  </tr>
+  <tr>
+    <th>Cost</th>
+    <td><input placeholder="Cost" [(ngModel)]="editedTrip.cost"></td>
+  </tr>
+  </tbody>
+</table>
+  <button (click)=onDelete() class="button btn-primary delete">Delete</button>
+  <button (click)=onSave() class="button btn-primary save">Save</button>
+</div>
+

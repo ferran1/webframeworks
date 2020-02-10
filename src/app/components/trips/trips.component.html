@@ -1,0 +1,26 @@
+<div class="table-responsive">
+<table class="table table-bordered">
+
+  <tr>
+    <th><button class="bg-transparent border-0" (click)="orderByStartDate()">Day</button><span [hidden]="propertyName != 'date'" [ngClass]="sortType ? 'sortorder' : 'sortorder reverse'"></span></th>
+    <th>Time</th>
+    <th>Duration</th>
+    <th>From</th>
+    <th>To</th>
+    <th><button class="bg-transparent border-0"(click)="orderByMileage()">Mileage</button><span [hidden]="propertyName != 'mileage'" [ngClass]="sortType ? 'sortorder' : 'sortorder reverse'"></span></th>
+    <th><button class="bg-transparent border-0" (click)="orderByCost()">Cost</button><span [hidden]="propertyName != 'cost'" [ngClass]="sortType ? 'sortorder' : 'sortorder reverse'"></span></th>
+  </tr>
+  <tr *ngFor="let trip of trips">
+    <td>{{ trip.start | date: 'dd/MM/yyyy' }} </td>
+    <td>{{ trip.start |  date: 'HH:mm:ss' }} </td>
+    <td>{{ trip.duration |  date: 'HH:mm:ss' : '+0000' }} </td>
+    <td>{{ trip.startLocation }} </td>
+    <td>{{ trip.endLocation }} </td>
+    <td>{{ trip.mileage | number : '1.2-2' }} </td>
+    <td>{{ trip.cost | number : '1.2-2' }} </td>
+  </tr>
+
+
+</table>
+</div>
+

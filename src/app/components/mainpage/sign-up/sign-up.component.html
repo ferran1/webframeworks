@@ -1,0 +1,21 @@
+<div class="row justify-content-center">
+  <form class="col-md-6">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" name="email" [(ngModel)]="email" id="exampleInputEmail1" aria-describedby="emailHelp"
+             placeholder="Enter email">
+    </div>
+    <div class="form-group">
+      <label for="inputPassword">Password</label>
+      <input type="password" class="form-control" name="password" [(ngModel)]="samplePassword" id="inputPassword" placeholder="Password">
+    </div>
+    <div class="form-group">
+      <label for="confirmInputPassword">Confirm password</label>
+      <input type="password" class="form-control" name="password"  [(ngModel)]="confirmPassword" id="confirmInputPassword" placeholder="Password">
+    </div>
+    <div class="error-message" [hidden]="errorMessage == null">
+      <p>{{errorMessage}}</p>
+    </div>
+    <button type="submit" (click)="createUser()" class="btn btn-primary">Sign-up</button>
+  </form>
+</div>

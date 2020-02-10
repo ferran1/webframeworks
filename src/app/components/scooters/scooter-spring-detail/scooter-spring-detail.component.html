@@ -1,0 +1,43 @@
+<p *ngIf="activeIndex == null">Select a scooter from the left page!</p>
+<div *ngIf="activeIndex != null">
+  <form #editForm="ngForm" (keydown.enter)="$event.preventDefault()">
+    <h2>Update Scooter Information</h2>
+    <div class="form-group">
+      <label for="InputTag">Tag</label>
+      <input type="text" #scooterTag="ngModel" (ngModelChange)="onChanges()" required minlength="4"
+             maxlength="4" pattern="[A-Z][0-9]{3}" class="form-control"
+             [(ngModel)]="editedScooter.tag" name="tag" id="InputTag">
+      <div class="alert alert-danger" *ngIf="scooterTag.invalid">Invalid tags</div>
+      <div class="alert alert-danger" *ngIf="scooterTag.hasError('minlength')">Scooter tags must be 4 characters long</div>
+      <div class="alert alert-danger" *ngIf="scooterTag.hasError('pattern')">Scooter pattern invalid, example: 'A014'</div>
+    </div>
+    <div class="form-group">
+      <label for="StatusDropDown"> Status </label>
+      <select [(ngModel)]="ScooterStatus[editedScooter.status]" (ngModelChange)="onChanges()" name="status" class="form-control btn-outline-primary" id="StatusDropDown">
+        <option class="form-control"  *ngFor="let status of keys(ScooterStatus)">
+          {{ScooterStatus[status]}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="GpsLocation">Location</label>
+      <input (ngModelChange)="onChanges()" required [(ngModel)]="editedScooter.gpsLocation" type="text"  name="location" class="form-control" id="GpsLocation">
+    </div>
+    <div class="form-group">
+      <label for="Mileage">Mileage</label>
+      <input (ngModelChange)="onChanges()" [(ngModel)]="editedScooter.mileage" type="number" name="mileage" class="form-control" id="Mileage">
+    </div>
+    <div class="form-group">
+      <label for="BatteryCharge">Battery charge</label>
+      <input (ngModelChange)="onChanges()" #batteryCharge="ngModel" required pattern="[0-9]+(.[0-9]{0,2})?" [(ngModel)]="editedScooter.batteryCharge" type="decimal" name="batterycharge" class="form-control" id="BatteryCharge"/>
+      <div class="alert alert-danger" *ngIf="batteryCharge.invalid">Battery number invalid</div>
+      <div class="alert alert-danger" *ngIf="batteryCharge.hasError('pattern')">Battery pattern invalid, example: 52.12</div>
+    </div>
+  </form >
+  <div class="button-group">
+    <button (click)="onDelete()" [disabled]="this.unsavedChanges" type="button" class="btn btn-secondary">Remove</button>
+    <button (click)="onSave()" [disabled]="!this.unsavedChanges || editForm.invalid" type="button" class="btn btn-primary">Save</button>
+    <button (click)="onClear()" type="button" class="btn btn-primary">Clear</button>
+    <button (click)="onReset(); editForm.form.markAsPristine();" [disabled]="!this.unsavedChanges" type="button" class="btn btn-primary">Reset</button>
+    <button (click)="onCancel()" type="button" class="btn btn-primary">Cancel</button>
+  </div>
+</div>

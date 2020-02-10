@@ -1,0 +1,45 @@
+<p *ngIf="activeIndex == null">Select a trip at the left!</p>
+<div class="table-responsive" *ngIf="activeIndex != null">
+  <table class="table table-bordered" >
+    <tr>
+      <th colspan="2">Selected trip details of scooter: {{editedTrip.scooterTag}}</th>
+    </tr>
+    <tbody>
+    <tr>
+      <th>Start date:</th>
+      <td><input placeholder="Start date"  (ngModelChange)="onChanges()" [(ngModel)]="editedTrip.start"></td>
+    </tr>
+    <tr>
+      <th>End date:</th>
+      <td><input placeholder="End date" (ngModelChange)="onChanges()" [(ngModel)]="editedTrip.end"></td>
+    </tr>
+    <tr>
+      <th>Duration:</th>
+      <td><input placeholder="Duration" (ngModelChange)="onChanges()" [(ngModel)]="editedTrip.duration"></td>
+    </tr>
+    <tr>
+      <th>Start location:</th>
+      <td><input type="text" placeholder="Start location" (ngModelChange)="onChanges()" [(ngModel)]="editedTrip.startLocation"></td>
+    </tr>
+    <tr>
+      <th>End location:</th>
+      <td><input type="text" placeholder="End location" (ngModelChange)="onChanges()" [(ngModel)]="editedTrip.endLocation"></td>
+    </tr>
+    <tr>
+      <th>Mileage</th>
+      <td><input placeholder="Mileage"  (ngModelChange)="onChanges()" [(ngModel)]="editedTrip.mileage"></td>
+    </tr>
+    <tr>
+      <th>Cost</th>
+      <td><input placeholder="Cost" (ngModelChange)="onChanges()" [(ngModel)]="editedTrip.cost"></td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="config-buttons">
+  <button type="button" [disabled]="this.changesDetected" [ngClass]="this.changesDetected ? 'button-disabled' : ' '" (click)="onDelete()" class="button btn-primary btn-lg delete">Delete</button>
+  <button type="button" [disabled]="!this.changesDetected" [ngClass]="this.changesDetected ? '' : 'button-disabled'"(click)="onSave()" class="button btn-primary btn-lg save">Save</button>
+  <button type="button" (click)="onClear()" class="button btn-primary btn-lg clear">Clear</button>
+  <button type="button" [disabled]="!this.changesDetected" [ngClass]="this.changesDetected ? '' : 'button-disabled'" (click)="onReset()" class="button btn-primary btn-lg reset">Reset</button>
+  <button type="button" (click)="onCancel()" class="button btn-primary btn-lg reset">Cancel</button>
+  </div>
+</div>

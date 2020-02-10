@@ -1,0 +1,11 @@
+.table-responsive button{
+  margin: 0px 10px;
+}
+
+.config-buttons {
+  float: right;
+}
+
+.button-disabled {
+  opacity: 0.5;
+}

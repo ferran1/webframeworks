@@ -1,0 +1,40 @@
+<nav class="navbar " style="background-color: wheat">
+  <div class="float-left">
+    <a [routerLink]="['/simple-route1']" class="btn btn-outline-primary btn-square">Home</a>
+    <a [routerLink]="['/simple-route2']" class="btn btn-outline-primary btn-square">Trips</a>
+
+    <div class="btn-group" role="group">
+      <button id="btnScootersDrop1" type="button" class="btn btn-outline-primary btn-square" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Scooters
+      </button>
+      <div class="dropdown-menu" aria-labelledby="btnScootersDrop1">
+        <a [routerLink]="['/simple-route3']" class="dropdown-item">Service-based Scooters</a>
+        <a [routerLink]="['/simple-route4']" class="dropdown-item">Query-based Scooters</a>
+        <a [routerLink]="['/overview-aform']" class="dropdown-item">Form-based Scooters</a>
+        <a [routerLink]="['/http-route']" class="dropdown-item">HTTP-based Scooters</a>
+      </div>
+    </div>
+
+    <div class="btn-group" role="group">
+      <button id="btnScootersDrop2" type="button" class="btn btn-outline-primary btn-square"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Scooters 2
+      </button>
+      <div class="dropdown-menu" aria-labelledby="btnScootersDrop2">
+        <a [routerLink]="['/spring-scooters']" class="dropdown-item">Spring-based scooters</a>
+      </div>
+    </div>
+
+    <a class="btn btn-outline-primary btn-square">My Account</a>
+  </div>
+  <div class="float right">
+    <a [hidden]="sessionService.name != null || undefined" [routerLink]="['/signup']" class="btn btn-outline-primary btn-square">Sign Up</a>
+    <a [hidden]="sessionService.name != null || undefined" [routerLink]="['/login']" class="btn btn-outline-primary btn-square">Log In</a>
+    <a [hidden]="sessionService.name == null || undefined" (click)="sessionService.signOff()" [routerLink]="['/login']" class="btn btn-outline-primary btn-square">Log Out</a>
+  </div>
+
+
+</nav>
+
+
+

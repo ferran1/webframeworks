@@ -1,0 +1,72 @@
+<div class="col-12 container">
+  <div class="row">
+
+    <div class="col-md-3">
+      <div class="dropdown">
+        <button class="btn btn-outline-primary btn-block dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  > {{ dropDownText }}
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+          <a class="dropdown-item" href="/#" *ngFor="let city of dropDownCities"  (click)="showCity($event, city)" >
+            {{ city.name }}
+          </a>
+
+        </div>
+      </div>
+
+        <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let city of listCities"> {{ city.name }}
+            <span class="badge badge-primary badge-pill">{{city.bikes}}</span></li>
+
+        </ul>
+      </div>
+
+    <div class="col">
+    <div class="row no-gutters">
+      <div class="col-6">
+        <button class="btn btn-block" href="#" role="button" (click)="showPlekInfo(imgDescription[0], image1)">
+          <img [src]="image1" class="img-fluid" alt="placeholder"></button>
+      </div>
+      <div class="col-6">
+        <button class="btn btn-block" href="#" role="button" (click)="showPlekInfo(imgDescription[1], image2)">
+          <img [src]="image2" class="img-fluid" alt="placeholder"></button>
+      </div>
+      <div class="w-100"></div>
+      <div class="col-6">
+        <button class="btn btn-block" href="#" role="button" (click)="showPlekInfo(null, image3)">
+        <img [src]="image3" class="img-fluid" alt="placeholder"></button>
+      </div>
+      <div class="col-6">
+        <button class="btn btn-block"  href="#" role="button" (click)="showPlekInfo(null, image4)"> <img [src]="image4" class="img-fluid" alt="placeholder"></button>
+      </div>
+      <div class="w-100"></div>
+      <div class="col-6">
+        <button class="btn btn-block" href="#" role="button" (click)="showPlekInfo(nuull, image5)">
+          <img [src]="image5" class="img-fluid" alt="placeholder"></button>
+        <button class="btn btn-block" href="#" role="button" (click)="showPlekInfo(null, image5)">
+            <img [src]="image5" class="img-fluid" alt="placeholder"></button>
+
+      </div>
+      <div class="col-6 col-lg-">
+        <button class="btn btn-block btn-lg"  href="#" role="button"(click)="showPlekInfo(null, image7)"> <img [src]="image7" class="img-fluid" alt="placeholder"></button>
+      </div>
+
+    </div>
+    </div>
+
+    <div class="col-md-3" >
+      <div *ngIf="descriptionTitle">
+      <h5> {{descriptionTitle}} </h5>
+      <p>{{description }}</p>
+      <hr>
+      <h6> Bike Location: </h6>
+      <p>{{bikeLocation}}</p>
+      <h6>Approximate duration:</h6>
+      <p>{{ approximateDuration }}</p>
+      <hr>
+        <button class="btn btn-primary"> Subscribe</button>
+      </div>
+    </div>
+
+
+  </div>
+</div>

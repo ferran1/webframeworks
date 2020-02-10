@@ -1,0 +1,27 @@
+table {
+  margin: 20px 0px 0px 20px;
+
+}
+
+td, th {
+  padding: 10px 50px 10px 10px;
+}
+
+th {
+  background-color: wheat;
+}
+
+.highlight {
+  background-color: aqua;
+}
+
+.sortorder:after {
+  margin-left: 5px;
+  color: #000000;
+  content:'\25b2';
+}
+
+.sortorder.reverse:after {
+  color: #000000;
+  content:'\25bc';
+}

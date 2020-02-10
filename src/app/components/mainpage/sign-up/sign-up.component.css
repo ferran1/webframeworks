@@ -1,0 +1,13 @@
+form.col-md-6 {
+  margin-top: 5%;
+}
+
+.error-message {
+  color: #fc0101;
+  border-style: double;
+  border-color: #be5e5e;
+  padding: 10px;
+  font-weight: bold;
+  background-color: bisque;
+  margin-bottom: 5px;
+}
